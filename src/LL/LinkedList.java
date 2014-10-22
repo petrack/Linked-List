@@ -13,14 +13,22 @@ public class LinkedList
 	private ListElement current;
 	private int n;
 	
-	
+	/**
+	 * constructor
+	 * initializes head and tail to null because no elements added yet
+	 * length is also zero
+	 */
 	public LinkedList ()
 	{
 		head = null;
 		tail = head;
 		n = 0;
 	}
-	
+	/**
+	 * Adds an element to the end of the linked list
+	 * @param le 
+	 * The element to add
+	 */
 	public void addElement (ListElement le)
 	{
 		ListElement x;
@@ -47,7 +55,13 @@ public class LinkedList
 	     n++;
 	}
 	
-	
+	/**
+	 *  Deletes an element specified by its index in the list
+	 * @param index
+	 * The integer value of the index to delete
+	 * @return
+	 * returns the element that was deleted
+	 */
 	public ListElement deleteElement (int index)
 	{
 		current = head;
@@ -96,7 +110,11 @@ public class LinkedList
 		}
 		
 	}
-	
+	/**
+	 * Retrieves an element from a specified index in the list
+	 * @param index which is an integer value of the index to get
+	 * @return returns the list element at the index
+	 */
 	public ListElement getElement (int index)
 	{
 		current = head;
@@ -107,7 +125,9 @@ public class LinkedList
 		
 		return current;
 	}
-	
+	/**
+	 * Prints the list starting at the head (index 0) to tail (index n)
+	 */
 	public void printLinkedListHead ()
 	{
 		current = head;
@@ -119,7 +139,10 @@ public class LinkedList
 			current = current.next;
 		}
 	}
-	
+	/**
+	 * 
+	 * Prints the list from the tail (index n) to head (index 0)
+	 */
 	public void printLinkedListTail ()
 	{
 		current = tail;
@@ -129,7 +152,12 @@ public class LinkedList
 			current = current.previous;
 		}
 	}
-	
+	/**
+	 * checks to see if the index entered by the user is valid for 
+	 * the number of elements currently in the list
+	 * @param index
+	 * @return true or false
+	 */
 	public boolean validIndex (int index)
 	{
 		if (index < 0 || index > n)
